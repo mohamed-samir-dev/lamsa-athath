@@ -4,8 +4,8 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "سياسة الشحن | تعون للأجهزة المنزلية",
-  description: "سياسة الشحن والتوصيل لتعون للأجهزة المنزلية",
+  title: "سياسة الشحن | لمسة للأجهزة الذكية",
+  description: "سياسة الشحن والتوصيل للمسة للأجهزة الذكية",
 };
 
 export default function ShippingPolicyPage() {

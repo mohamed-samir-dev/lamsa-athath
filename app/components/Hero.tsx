@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section dir="rtl" className="relative w-full h-[400px] sm:h-[500px] md:h-[620px] overflow-hidden">
       <Image
         src="/hhhhh.webp"
-        alt="تعون للأجهزة المنزلية - أجهزة منزلية بأعلى جودة"
+        alt="لمسة للأجهزة الذكية - أجهزة ذكية بأعلى جودة"
         fill
         className="object-cover object-center"
         priority
@@ -43,18 +44,18 @@ export default function Hero() {
 
             {/* Buttons */}
             <div className="flex flex-row gap-3 justify-start">
-              <a
+              <Link
                 href="/products"
                 className="bg-secondary hover:bg-secondary/85 active:scale-95 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-2xl text-sm sm:text-base font-bold transition-all shadow-[0_4px_20px_rgba(0,106,97,0.5)] hover:shadow-[0_6px_28px_rgba(0,106,97,0.65)]"
               >
                 تسوق الآن
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="border-2 border-white/70 hover:border-white text-white hover:bg-white/15 active:scale-95 px-6 sm:px-8 py-3 sm:py-3.5 rounded-2xl text-sm sm:text-base font-semibold transition-all backdrop-blur-sm"
               >
                 تواصل معنا
-              </a>
+              </Link>
             </div>
           </div>
         </div>

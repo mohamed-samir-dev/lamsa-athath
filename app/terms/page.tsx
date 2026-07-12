@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 export const metadata = {
-  title: "الشروط والأحكام | تعون للأجهزة المنزلية",
+  title: "الشروط والأحكام | لمسة للأجهزة الذكية",
 };
 
 const sections = [

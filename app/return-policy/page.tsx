@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 export const metadata = {
-  title: "سياسة الاسترجاع | تعون للأجهزة المنزلية",
+  title: "سياسة الاسترجاع | لمسة للأجهزة الذكية",
 };
 
 export default function ReturnPolicyPage() {
