@@ -22,10 +22,9 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
           { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
           { key: "Cross-Origin-Resource-Policy", value: "cross-origin" },
-          { key: "Cross-Origin-Embedder-Policy", value: "credentialless" },
+          { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: http://localhost:5000; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://mada-backend-production.up.railway.app http://localhost:5000; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" },
           { key: "Cache-Control", value: "no-store, no-cache, must-revalidate, proxy-revalidate" },
           { key: "Pragma", value: "no-cache" },
-
         ],
       },
     ];
