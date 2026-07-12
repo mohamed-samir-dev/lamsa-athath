@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://burjj-almubdia.com/sitemap.xml

@@ -1,0 +1,105 @@
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { Cairo } from "next/font/google";
+import "./globals.css";
+import Providers from "./components/Providers";
+
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const siteUrl = "https://burjj-almubdia.com";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "تعون للأجهزة المنزلية | أفضل الأجهزة بأعلى جودة وأفضل سعر",
+    template: "%s | تعون للأجهزة المنزلية",
+  },
+  description:
+    "وجهتكم الأولى لأحدث الأجهزة المنزلية بأعلى جودة وأفضل الأسعار. نوفر لكم أفضل الماركات العالمية مع ضمان الجودة والتوصيل لجميع مناطق المملكة.",
+  keywords: [
+    "أجهزة منزلية",
+    "شاشات",
+    "أجهزة منزلية",
+    "أجهزة كهربائية",
+    "تلفزيون",
+    "مكيفات",
+    "تعون للأجهزة المنزلية",
+    "تسوق إلكتروني",
+    "أفضل سعر",
+    "ماركات عالمية",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "ar_SA",
+    url: siteUrl,
+    siteName: "تعون للأجهزة المنزلية",
+    title: "تعون للأجهزة المنزلية | أفضل الأجهزة بأعلى جودة وأفضل سعر",
+    description:
+      "وجهتكم الأولى لأحدث الأجهزة المنزلية بأعلى جودة وأفضل الأسعار مع ضمان الجودة والتوصيل لجميع مناطق المملكة.",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "تعون للأجهزة المنزلية",
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "تعون للأجهزة المنزلية | أفضل الأجهزة بأعلى جودة وأفضل سعر",
+    description:
+      "وجهتكم الأولى لأحدث الأجهزة المنزلية بأعلى جودة وأفضل الأسعار.",
+    images: ["/logo.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+};
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const nonce = (await headers()).get("x-nonce") ?? "";
+  return (
+    <html lang="ar" dir="rtl" className={`${cairo.variable}`}>
+      <head>
+        <meta name="google-site-verification" content="_bdpfOKIlFR2M5igXbQUKP5JaknrlnMa1129uAPuPnQ" />
+        <meta name="domain-verification" content="b7ef15c14e0c20e451ef6aa7603d3b3f601c18a1dd1c51344691bd09b694c955" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+          nonce={nonce}
+        />
+        <meta name="theme-color" content="#1a237e" />
+      </head>
+      <body className="bg-surface text-on-surface">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
