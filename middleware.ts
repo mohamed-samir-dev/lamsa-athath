@@ -1,21 +1,36 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const isDev = process.env.NODE_ENV === "development";
+
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
 
-  const csp = [
-    `default-src 'self'`,
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
-    `style-src 'self' 'nonce-${nonce}' https://fonts.googleapis.com`,
-    `img-src 'self' data: blob: https: http://localhost:5000`,
-    `font-src 'self' data: https://fonts.gstatic.com`,
-    `connect-src 'self' https://mada-backend-production.up.railway.app http://localhost:5000`,
-    `frame-ancestors 'none'`,
-    `base-uri 'self'`,
-    `form-action 'self'`,
-    `object-src 'none'`,
-  ].join("; ");
+  const csp = isDev
+    ? [
+        `default-src 'self'`,
+        `script-src 'self' 'unsafe-inline' 'unsafe-eval'`,
+        `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
+        `img-src 'self' data: blob: https: http://localhost:5000`,
+        `font-src 'self' data: https://fonts.gstatic.com`,
+        `connect-src 'self' ws: wss: https://mada-backend-production.up.railway.app http://localhost:5000`,
+        `frame-ancestors 'none'`,
+        `base-uri 'self'`,
+        `form-action 'self'`,
+        `object-src 'none'`,
+      ].join("; ")
+    : [
+        `default-src 'self'`,
+        `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
+        `style-src 'self' 'nonce-${nonce}' https://fonts.googleapis.com`,
+        `img-src 'self' data: blob: https: http://localhost:5000`,
+        `font-src 'self' data: https://fonts.gstatic.com`,
+        `connect-src 'self' https://mada-backend-production.up.railway.app http://localhost:5000`,
+        `frame-ancestors 'none'`,
+        `base-uri 'self'`,
+        `form-action 'self'`,
+        `object-src 'none'`,
+      ].join("; ");
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);

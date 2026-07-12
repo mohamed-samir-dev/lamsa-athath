@@ -48,7 +48,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-secondary">email</span>
-                <span className="text-on-surface-variant">sahlnaha@sahlnahanett.net</span>
+                <span className="text-on-surface-variant">info@lamsah-aldhaqiah.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-secondary">phone</span>

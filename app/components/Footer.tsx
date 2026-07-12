@@ -78,9 +78,9 @@ export default function Footer() {
                 <span className="font-bold text-sm" dir="ltr">0599535798</span>
               </div>
             </a>
-            <a href="mailto:sahlnaha@sahlnahanett.net" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-xs sm:text-sm mt-3">
+            <a href="mailto:info@lamsah-aldhaqiah.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-xs sm:text-sm mt-3">
               <span className="material-symbols-outlined text-base">email</span>
-              <span dir="ltr">sahlnaha@sahlnahanett.net</span>
+              <span dir="ltr">info@lamsah-aldhaqiah.com</span>
             </a>
           </div>
         </div>

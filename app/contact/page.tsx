@@ -51,7 +51,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <span className="text-sm text-on-surface-variant">البريد الإلكتروني</span>
-                <a href="mailto:sahlnaha@sahlnahanett.net" className="block text-on-surface font-bold text-sm sm:text-base hover:text-secondary transition-colors" dir="ltr">sahlnaha@sahlnahanett.net</a>
+                <a href="mailto:info@lamsah-aldhaqiah.com" className="block text-on-surface font-bold text-sm sm:text-base hover:text-secondary transition-colors" dir="ltr">info@lamsah-aldhaqiah.com</a>
               </div>
             </div>
 
